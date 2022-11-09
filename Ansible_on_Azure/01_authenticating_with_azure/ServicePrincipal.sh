@@ -1,3 +1,10 @@
+#Login interactively and set a subscription to be the current active subscription
+az login && az account set --subscription "Microsoft Azure Sponsorship"
+
+az account show --output table
+
+az account list --all --output table
+
 #Create Service Principal using the Azure CLI
 az ad sp create-for-rbac --name <Service Principal name>
 
