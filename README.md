@@ -1,2 +1,2 @@
-# Ansible_and_Vagrant_Fundamentals
+# Ansible and Vagrant Fundamentals
 A repository about Ansible and Vagrant!
