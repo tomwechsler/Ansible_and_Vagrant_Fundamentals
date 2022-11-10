@@ -10,6 +10,7 @@ client_id=<id>
 secret=<secret>
 tenant=<id>
 
+#The other way - recommended
 #Pass Environment Variables
 export AZURE_SUBSCRIPTION_ID=<id>
 export AZURE_CLIENT_ID=<id>
