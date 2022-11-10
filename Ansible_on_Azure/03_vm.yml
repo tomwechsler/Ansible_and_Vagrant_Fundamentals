@@ -1,0 +1,97 @@
+---
+- name: Create Azure VM
+  hosts: localhost
+  connection: local
+  
+   
+  vars_prompt:
+    - name: password
+      prompt: "Enter local administrator password"
+  
+  vars:
+    resource_group_name: awesomerg
+    vm_name: awesomevm1
+    vnet_name: awesomevnet
+    subnet_name: awesomesubnet1
+    public_ip_name: awesomepublicip1
+    security_group_name: awesomesecgroup1
+    network_interface_name: awesomenic1
+  
+  tasks:
+    - name: Creating resource group
+      azure_rm_resourcegroup:
+        name: "{{ resource_group_name }}"
+        location: eastus
+
+    - name: Create virtual network
+      azure_rm_virtualnetwork:
+        resource_group: "{{ resource_group_name }}"
+        name: "{{ vnet_name }}"
+        address_prefixes: "10.10.0.0/16"
+    
+    - name: Add subnet
+      azure_rm_subnet:
+        resource_group: "{{ resource_group_name }}"
+        name: "{{ subnet_name }}"
+        address_prefix: "10.10.0.0/24"
+        virtual_network: "{{ vnet_name }}"
+    
+    - name: Create public ip
+      azure_rm_publicipaddress:
+        resource_group: "{{ resource_group_name }}"
+        allocation_method: Static
+        name: "{{ public_ip_name }}"
+    
+    - name: Create security group that allows RDP
+      azure_rm_securitygroup:
+        resource_group: "{{ resource_group_name }}"
+        name: "{{ security_group_name }}"
+        rules:
+          - name: 'allow_rdp'
+            protocol: Tcp
+            destination_port_range: 3389
+            access: Allow
+            priority: 1001
+            direction: Inbound
+          - name: 'allow_web_traffic'
+            protocol: Tcp
+            destination_port_range:
+              - 80
+              - 443
+            access: Allow
+            priority: 1002
+            direction: Inbound
+          - name: 'allow_powershell_remoting'
+            protocol: Tcp
+            destination_port_range: 
+              - 5985
+              - 5986
+            access: Allow
+            priority: 1003
+            direction: Inbound
+    
+    - name: Create NIC
+      azure_rm_networkinterface:
+        resource_group: "{{ resource_group_name }}"
+        name: "{{ network_interface_name }}"
+        virtual_network: "{{ vnet_name }}"
+        subnet: "{{ subnet_name }}"
+        public_ip_name: "{{ public_ip_name }}"
+        security_group: "{{ security_group_name }}"
+    
+    - name: Create virtual machine
+      azure_rm_virtualmachine:
+        resource_group: "{{ resource_group_name }}"
+        name: "{{ vm_name }}"
+        vm_size: Standard_DS1_v2
+        managed_disk_type: Standard_LRS
+        admin_username: awesomeadmin
+        admin_password: "{{ password }}"
+        network_interfaces: "{{ network_interface_name }}"
+        os_type: Windows
+        image:
+            offer: WindowsServer
+            publisher: MicrosoftWindowsServer
+            sku: 2019-Datacenter
+            version: latest
+      no_log: true
