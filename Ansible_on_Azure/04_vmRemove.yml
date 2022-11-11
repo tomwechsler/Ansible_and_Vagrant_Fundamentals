@@ -1,0 +1,17 @@
+---
+- name: Remove Azure VM with associated resources
+  hosts: localhost
+  connection: local
+    
+
+  vars:
+    resource_group_name: awesomerg
+    vm_name: awesomevm2
+  
+  tasks:    
+    - name: Remove virtual machine and resources
+      azure_rm_virtualmachine:
+        resource_group: "{{ resource_group_name }}"
+        name: "{{ vm_name }}"
+        remove_on_absent: all
+        state: absent
