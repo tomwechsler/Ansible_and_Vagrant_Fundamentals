@@ -10,3 +10,7 @@ ansible localhost -m azure_rm_resourcegroup -a "name=ansible-test location=weste
       azure_rm_resourcegroup:
         name: "ansible-test"
         location: "westeurope"
+
+
+#To run the playbook
+ansible-playbook demo.yml
