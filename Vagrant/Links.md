@@ -1,5 +1,5 @@
-Virtualbox
+Virtualbox  
 <https://www.virtualbox.org/>
 
-Vagrant
+Vagrant  
 <https://www.vagrantup.com/>
