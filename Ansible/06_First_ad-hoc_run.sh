@@ -1,0 +1,1 @@
+ansible all -m setup -a "filter=*family*"
