@@ -2,7 +2,8 @@ Virtualbox
 ------------
 <https://www.virtualbox.org>
 
-Vagrant  
+Vagrant
+------------
 <https://www.vagrantup.com>
 
 <https://developer.hashicorp.com/vagrant/downloads>
