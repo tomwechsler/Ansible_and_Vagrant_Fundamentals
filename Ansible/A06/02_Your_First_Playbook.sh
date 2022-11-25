@@ -1,5 +1,13 @@
 vim my.yml
 
+---
+
+- name: simple play
+  hosts: servers
+  tasks:
+    - name: ping me
+	  ping:
+
 ansible-playbook my.yml
 
 
