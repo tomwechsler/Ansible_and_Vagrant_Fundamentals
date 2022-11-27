@@ -6,6 +6,7 @@
 
 ---
 
+- name: loops
 - hosts: ubuntu
   become: yes
   
@@ -27,6 +28,7 @@ ansible-playbook loops.yaml
 
 ---
 
+- name: loops
 - hosts: ubuntu
   become: yes
   

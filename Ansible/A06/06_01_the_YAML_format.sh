@@ -6,6 +6,7 @@ vim play.yaml
 
 ---
 
+- name: play
 - hosts: server
   tasks:
    - name: the command uname
@@ -33,6 +34,9 @@ ansible-playbook -b play.yaml
 
 vim play.yaml
 
+---
+
+- name: play
 - hosts: server
   become: yes
   tasks:
@@ -50,6 +54,9 @@ ansible-playbook play.yaml
 
 vim play.yaml
 
+---
+
+- name: play
 - hosts: server
   become: yes
   tasks:

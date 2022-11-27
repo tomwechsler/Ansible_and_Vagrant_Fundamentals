@@ -8,6 +8,7 @@ ansible ubuntu -b -m apt -a 'name=apache2 state=absent'
 
 ---
 
+- name: conditionals
 - hosts: server
   become: yes
   
@@ -30,6 +31,7 @@ ansible-playbook cond.yaml
 
 ---
 
+- name: conditionals
 - hosts: server
   become: yes
   
@@ -51,6 +53,7 @@ ansible-playbook cond.yaml
 
 ---
 
+- name: conditionals
 - hosts: server
   become: yes
   

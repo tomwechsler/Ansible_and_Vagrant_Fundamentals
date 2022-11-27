@@ -6,6 +6,7 @@ vim handlers.yaml
 
 ---
 
+- name: handlers
 - hosts: server
   become: yes
   tasks:

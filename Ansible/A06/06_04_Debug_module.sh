@@ -4,6 +4,7 @@
 
 ---
 
+- name: debug
 - hosts: centos
   vars:
    - var_etwas: "Are you gonna"
@@ -23,6 +24,7 @@ echo -e "hallo\nhallo linie 2\nhallo linie 3"
 
 ---
 
+- name: debug
 - hosts: centos
   vars:
    - var_etwas: "Are you gonna"
@@ -45,6 +47,7 @@ ansible-playbook debug.yaml
 
 ---
 
+- name: debug
 - hosts: centos
   vars:
    - var_etwas: "Are you gonna"
