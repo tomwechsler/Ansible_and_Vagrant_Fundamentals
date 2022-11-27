@@ -16,6 +16,13 @@ vim play.yaml
 
 #Exit and save
 
+#Let's check the playbook
+
+ansible-playbook play.yaml --syntax-check
+
+ansible-playbook -C -v play.yaml
+
+
 ansible-playbook play.yaml
 
 #No output from the playbook but the text file was created (but not as root). We can do it like this
