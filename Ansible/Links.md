@@ -1,5 +1,4 @@
-# Some helpful links!
+# Some helpful links
 
 ## Ansible
-https://docs.ansible.com/ansible/latest/index.html
-
+<https://docs.ansible.com/ansible/latest/index.html>
