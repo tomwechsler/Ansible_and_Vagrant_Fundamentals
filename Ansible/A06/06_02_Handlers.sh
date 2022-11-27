@@ -24,5 +24,7 @@ vim handlers.yaml
      service: name=vsftpd enabled=yes state=started
 
 
+ansible-playbook handlers.yaml
+
 #Make note that the handler has been executed. When the playbook is started again, 
 #the handler will not be called again because there was no change.

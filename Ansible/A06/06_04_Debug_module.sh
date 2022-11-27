@@ -15,6 +15,8 @@
 
 #Now we edit our playbook again. Modifying the playbook with "echo -e".
 
+ansible-playbook debug.yaml
+
 echo -e "hallo\nhallo linie 2\nhallo linie 3"
 
 #vim debug.yaml
@@ -35,6 +37,8 @@ echo -e "hallo\nhallo linie 2\nhallo linie 3"
      debug: msg={{ results }}
 
 
+ansible-playbook debug.yaml
+
 #Adjust only the last line with .stdout_lines
 
 #vim debug.yaml
@@ -53,3 +57,6 @@ echo -e "hallo\nhallo linie 2\nhallo linie 3"
 
    - name: Show the result
      debug: msg={{ results.stdout_lines }}
+
+
+ansible-playbook debug.yaml

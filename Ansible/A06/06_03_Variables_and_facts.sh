@@ -14,6 +14,8 @@ vim facts.yaml
      shell: echo " {{ var1 }} is var1, but var2 {{ var2 }}" > /home/vagrant/facts.txt
 
 
+ansible-playbook facts.yaml
+
 #Now we have worked with the first variables. Now imagine if we can create the variables based on facts. 
 #The following example:
 
@@ -31,3 +33,5 @@ ansible centos -m setup -a "filter=*family*"
   tasks:
    - name: echo stuff
      shell: echo " {{ var1 }} var1, but var2 {{ var2 }}" > /home/vagrant/{ ansible_os_failiy }}.txt
+
+ansible-playbook facts.yaml
