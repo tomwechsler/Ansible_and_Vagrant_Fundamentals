@@ -1,6 +1,6 @@
 ansible -m ping all
 
-#Now edit /etc/ansible/hosts list (with a group 'Server' and 'Client')
+#To change the inventoy /etc/ansible/hosts list (with a group 'server' and 'client')
 
 ansible -m ping all
 
