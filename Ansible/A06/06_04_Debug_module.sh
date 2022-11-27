@@ -13,11 +13,11 @@
      debug: msg="the variable var_etwas is destined to - {{ var_etwas }}"
 
 
-#Now we edit our playbook again. Modifying the playbook with "echo -e".
-
 ansible-playbook debug.yaml
 
 echo -e "hallo\nhallo linie 2\nhallo linie 3"
+
+#Now we edit our playbook again. Modifying the playbook with "echo -e".
 
 #vim debug.yaml
 

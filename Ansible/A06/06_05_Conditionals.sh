@@ -42,6 +42,7 @@ ansible-playbook cond.yaml
      yum: name=httpd state=latest
 	 when: ansible_os_family == "RedHat"
 
+
 ansible-playbook cond.yaml
 
 #Uninstall the web server:
@@ -61,5 +62,6 @@ ansible-playbook cond.yaml
    - name: install httpd
      yum: name=httpd state=absent
 	 when: ansible_os_family == "RedHat"
+
 
 ansible-playbook cond.yaml
