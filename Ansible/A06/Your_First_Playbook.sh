@@ -1,4 +1,4 @@
-vim my.yml
+#vim my.yml
 
 ---
 
@@ -6,7 +6,8 @@ vim my.yml
   hosts: servers
   tasks:
     - name: ping me
-	  ping:
+	    ping:
+
 
 ansible-playbook my.yml
 

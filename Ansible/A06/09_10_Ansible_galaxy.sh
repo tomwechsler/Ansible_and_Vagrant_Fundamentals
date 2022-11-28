@@ -1,6 +1,5 @@
 #Ansible Galaxy
 
-
 https://galaxy.ansible.com/
 
 #The templates which are downloaded from Galaxy are in the directory:
