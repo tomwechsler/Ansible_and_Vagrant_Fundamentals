@@ -10,7 +10,7 @@ ansible-galaxy search freeipa
 
 #Attention when choosing, make sure that the template supports your distribution.
 
-sudo ansible-galaxy install yabhinav.ipaserver
+ansible-galaxy install yabhinav.ipaserver
 
 ls /etc/ansible/roles
 
