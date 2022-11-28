@@ -37,7 +37,7 @@ vim play.yaml
 ---
 
 - name: play
-- hosts: server
+  hosts: server
   become: yes
   tasks:
    - name: the command uname
@@ -57,7 +57,7 @@ vim play.yaml
 ---
 
 - name: play
-- hosts: server
+  hosts: server
   become: yes
   tasks:
    - name: the uname command

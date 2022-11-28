@@ -7,18 +7,18 @@ vim handlers.yaml
 ---
 
 - name: handlers
-- hosts: server
+  hosts: server
   become: yes
   tasks:
    - name: install vsftpd on ubuntu
      apt: name=vsftpd update_cache=yes state=latest
-	 ignore_errors: yes
-	 notify: start vsftpd
+	   ignore_errors: yes
+	   notify: start vsftpd
    
    - name: install vsftpd on centos
      yum: name=vsftpd state=latest
-	 ignore_errors: yes
-	 notify: start vsftpd
+	   ignore_errors: yes
+	   notify: start vsftpd
 
   handlers:
    - name: start vsftpd

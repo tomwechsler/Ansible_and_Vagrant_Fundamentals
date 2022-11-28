@@ -7,7 +7,8 @@
 
 ---
 
-- hosts: server
+- name: templates
+  hosts: server
   become: yes
   vars:
    file_version: 1.0
@@ -15,9 +16,9 @@
   tasks:
    - name: install index
      template:
-	  src: index.html.j2
-	  dest: /var/www/html/index.html
-	  mode: 0777
+	    src: index.html.j2
+	    dest: /var/www/html/index.html
+	    mode: 0777
 
 #Now we create the template.
 

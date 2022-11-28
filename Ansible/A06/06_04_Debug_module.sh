@@ -5,13 +5,13 @@
 ---
 
 - name: debug
-- hosts: centos
+  hosts: centos
   vars:
-   - var_etwas: "Are you gonna"
+   - var_thing: "Are you gonna"
   
   tasks:
    - name: Show the result
-     debug: msg="the variable var_etwas is destined to - {{ var_etwas }}"
+     debug: msg="the variable var_thing is destined to - {{ var_thing }}"
 
 
 ansible-playbook debug.yaml
@@ -25,13 +25,13 @@ echo -e "hallo\nhallo linie 2\nhallo linie 3"
 ---
 
 - name: debug
-- hosts: centos
+  hosts: centos
   vars:
-   - var_etwas: "Are you gonna"
+   - var_thing: "Are you gonna"
   
   tasks:
-   - name: echo etwas
-     command: echo -e "{{ var_etwas }} go my way,\n{{ var_etwas }} your way,\n{{ var_etwas }} the right way YEAH!!"
+   - name: echo thing
+     command: echo -e "{{ var_thing }} go my way,\n{{ var_thing }} your way,\n{{ var_thing }} the right way YEAH!!"
      register: results
 
 
@@ -48,13 +48,13 @@ ansible-playbook debug.yaml
 ---
 
 - name: debug
-- hosts: centos
+  hosts: centos
   vars:
-   - var_etwas: "Are you gonna"
+   - var_thing: "Are you gonna"
   
   tasks:
-   - name: echo etwas
-     command: echo -e "{{ var_etwas }} go my way,\n{{ var_etwas }} your way,\n{{ var_etwas }} the right way YEAH!!"
+   - name: echo thing
+     command: echo -e "{{ var_thing }} go my way,\n{{ var_thing }} your way,\n{{ var_thing }} the right way YEAH!!"
      register: results
 
 

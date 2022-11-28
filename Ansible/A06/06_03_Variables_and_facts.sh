@@ -5,7 +5,7 @@
 ---
 
 - name: facts
-- hosts: centos
+  hosts: centos
   vars:
   - var1: thats great
   - var2: is even better
@@ -31,13 +31,15 @@ ansible centos -m setup -a "filter=*family*"
 ---
 
 - name: facts
-- hosts: centos
+  hosts: centos
   vars:
   - var1: thats great
   - var2: is even better
   
   tasks:
    - name: echo stuff
-     shell: echo " {{ var1 }} var1, but var2 {{ var2 }}" > /home/vagrant/{ ansible_os_failiy }}.txt
+     shell: echo " {{ var1 }} var1, but var2 {{ var2 }}" > /home/vagrant/{{ ansible_os_family }}.txt
 
 ansible-playbook facts.yaml
+
+#If you want ignore facts use gather_facts: false under hosts

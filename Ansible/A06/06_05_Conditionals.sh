@@ -9,18 +9,17 @@ ansible ubuntu -b -m apt -a 'name=apache2 state=absent'
 ---
 
 - name: conditionals
-- hosts: server
+  hosts: server
   become: yes
   
   tasks:
    - name: install apache2
      apt: name=apache2 update_cache=yes state=latest
-	 ignore_errors: yes
-	 register: results
+     ignore_errors: yes
 
    - name: install httpd
      yum: name=httpd state=latest
-	 when: results|failed
+     ignore_errors: yes
 
 
 ansible-playbook cond.yaml
@@ -32,17 +31,17 @@ ansible-playbook cond.yaml
 ---
 
 - name: conditionals
-- hosts: server
+  hosts: server
   become: yes
   
   tasks:
    - name: install apache2
      apt: name=apache2 update_cache=yes state=latest
-	 when: ansible_os_family == "Debian"
+	   when: ansible_os_family == "Debian"
 
    - name: install httpd
      yum: name=httpd state=latest
-	 when: ansible_os_family == "RedHat"
+	   when: ansible_os_family == "RedHat"
 
 
 ansible-playbook cond.yaml
@@ -60,11 +59,11 @@ ansible-playbook cond.yaml
   tasks:
    - name: install apache2
      apt: name=apache2 update_cache=yes state=absent
-	 when: ansible_os_family == "Debian"
+	   when: ansible_os_family == "Debian"
 
    - name: install httpd
      yum: name=httpd state=absent
-	 when: ansible_os_family == "RedHat"
+	   when: ansible_os_family == "RedHat"
 
 
 ansible-playbook cond.yaml
