@@ -1,6 +1,6 @@
 #Variables and facts
 
-#vim facts.yaml
+vim facts.yaml
 
 ---
 
@@ -26,7 +26,7 @@ ansible centos -m setup -a "filter=*family*"
 
 #and now the following adjustment in the playbook
 
-#vim facts.yaml
+vim facts.yaml
 
 ---
 

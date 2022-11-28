@@ -1,6 +1,6 @@
 #Debug Module
 
-#vim debug.yaml
+vim debug.yaml
 
 ---
 
@@ -20,7 +20,7 @@ echo -e "hallo\nhallo linie 2\nhallo linie 3"
 
 #Now we edit our playbook again. Modifying the playbook with "echo -e".
 
-#vim debug.yaml
+vim debug.yaml
 
 ---
 
@@ -43,7 +43,7 @@ ansible-playbook debug.yaml
 
 #Adjust only the last line with .stdout_lines
 
-#vim debug.yaml
+vim debug.yaml
 
 ---
 

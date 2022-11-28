@@ -3,7 +3,7 @@
 #The templates are created using the Jinja2 format. Let's start right away with a playbook and template. 
 #Before starting we will test that the web server is installed (with the browser) on the systems.
 
-#vim temp.yaml
+vim temp.yaml
 
 ---
 
@@ -22,7 +22,7 @@
 
 #Now we create the template.
 
-#vim index.html.j2
+vim index.html.j2
 
 <html>
 <center>

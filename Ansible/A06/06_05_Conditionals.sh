@@ -4,7 +4,7 @@ ansible centos -b -m yum -a 'name=httpd state=absent'
 
 ansible ubuntu -b -m apt -a 'name=apache2 state=absent'
 
-#vim cond.yaml
+vim cond.yaml
 
 ---
 
@@ -26,7 +26,7 @@ ansible-playbook cond.yaml
 
 #Or so that no error messages appear
 
-#vim cond.yaml
+vim cond.yaml
 
 ---
 
@@ -48,7 +48,7 @@ ansible-playbook cond.yaml
 
 #Uninstall the web server:
 
-#vim cond.yaml
+vim cond.yaml
 
 ---
 

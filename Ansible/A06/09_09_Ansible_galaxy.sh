@@ -14,7 +14,7 @@ ansible-galaxy install yabhinav.ipaserver
 
 ls /etc/ansible/roles
 
-#vim ipa.yaml
+vim ipa.yaml
 
 ---
 

@@ -2,7 +2,7 @@
 
 #Check the Ansible documentation on loops.
 
-#vim loops.yaml
+vim loops.yaml
 
 ---
 
@@ -24,7 +24,7 @@ ansible-playbook loops.yaml
 #Restart the playbook and there will be no change.
 #Another example:
 
-#vim loops.yaml
+vim loops.yaml
 
 ---
 

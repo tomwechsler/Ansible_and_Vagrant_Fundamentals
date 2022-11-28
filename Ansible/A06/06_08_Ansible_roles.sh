@@ -11,7 +11,7 @@ mkdir roles/apache/handlers
 
 cd roles/apache/handlers
 
-#vim main.yml
+vim main.yml
 
 ---
 
@@ -25,7 +25,7 @@ cd roles/apache/handlers
 
 cd roles/apache/tasks
 
-#vim main.yml
+vim main.yml
 
 ---
 
@@ -41,7 +41,7 @@ cd roles/apache/tasks
 
 cd
 
-#vim site.yml
+vim site.yml
 
 ---
 
