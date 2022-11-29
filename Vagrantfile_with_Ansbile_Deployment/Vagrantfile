@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-#Place Vagrantfile in the directory you run vagrant from.
+#Place Vagrantfile and the deploy.yaml file in the directory you run vagrant from.
 
 #setting for the centos VM
 Vagrant.configure("2") do |config|
