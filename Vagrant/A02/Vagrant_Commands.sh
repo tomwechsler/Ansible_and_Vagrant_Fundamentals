@@ -32,6 +32,9 @@ config.vm.network "private_network", ip: "192.168.56.101"
 
 #Be sure to save your changes
 
+#working with Provisioners
+config.vm.provision "shell", path: "provisioners/nginx-install.sh"
+
 #To apply the settings (instead of vagrant halt an vagrant up)
 vagrant reload
 
