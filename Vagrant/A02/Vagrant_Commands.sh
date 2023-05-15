@@ -57,6 +57,11 @@ vagrant init ubuntu/focal64
 #Add two virtual machine definitions.
 Vagrant.configure("2") do |config|
 	config.vm.box = "ubuntu/focal64"
+	
+	config.vm.provider "virtualbox" do |v|
+    v.memory = 2048
+    v.cpus = 2
+    end
 
 	config.vm.define "test1" do |test1|
 		test1.vm.hostname = "test1"
@@ -68,6 +73,9 @@ Vagrant.configure("2") do |config|
 		test2.vm.network "private_network", ip: "192.168.56.102"
 	end
 end
+
+#Save and exit (and validate the file)
+vagrant validate
 
 #Start the virtual machines. (Remember, that if you do not specify a VM name all the defined VMs will be started.)
 vagrant up
